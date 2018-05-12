@@ -16,6 +16,9 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Style -->
+<!--     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+
     <!-- Custom fonts for this template -->
     <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -43,16 +46,16 @@
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Acerca de</a>
+              <a class="nav-link" href="about.php">Acerca de</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Formularios y Guias</a>
+              <a class="nav-link" href="guide.php">Formularios y Guias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Proyectos</a>
+              <a class="nav-link" href="project.php">Proyectos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Memorias</a>
+              <a class="nav-link" href="memory.php">Memorias</a>
             </li>
           </ul>
         </div>
