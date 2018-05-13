@@ -24,7 +24,33 @@
         <div class="col-md-8">
 
           <h3 class="my-4">Formularios</h3>
-          
+
+          <div class="row">
+            <div class="col-md-8" >
+              <h4>Proceso de Inscripción</h4>
+            </div>
+            <div class="col-md-4" >
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Ver</button>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-8" >
+              <h4>Proceso de Inscripción</h4>
+            </div>
+            <div class="col-md-4" >
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Ver</button>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-8" >
+              <h4>Proceso de Inscripción</h4>
+            </div>
+            <div class="col-md-4" >
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Ver</button>
+            </div>
+          </div>
 
         </div>
 
@@ -56,4 +82,26 @@
 
     </div>
     <!-- /.container -->
+
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Inscripción</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <?php include "template/footer.php"; ?>
