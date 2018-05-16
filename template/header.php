@@ -17,7 +17,7 @@
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Style -->
-<!--     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 
     <!-- Custom fonts for this template -->
     <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -52,10 +52,7 @@
               <a class="nav-link" href="guide.php">Formularios y Guias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="project.php">Proyectos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="memory.php">Memorias</a>
+              <a class="nav-link" href="project.php">Proyectos / Memorias</a>
             </li>
           </ul>
         </div>

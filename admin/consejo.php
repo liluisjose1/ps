@@ -29,8 +29,8 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Usuario</th>
                                                 <th>Nombre</th>
+                                                <th>Departamento / Sección</th>
                                                 <th>Accion</th>
                                             </tr>
                                         </thead>

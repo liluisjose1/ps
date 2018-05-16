@@ -105,7 +105,7 @@
                         <li class="nav-label">Home</li>
                         <li> <a class="has-arrow  " href="assets/#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="assets/home.php">Home </a></li>
+                                <li><a href="home.php">Home </a></li>
                             </ul>
                         </li>
                         <li class="nav-label">Apps</li>
