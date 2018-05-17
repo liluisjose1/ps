@@ -35,7 +35,8 @@
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-
+    <link rel="stylesheet" href="assets/richtext/src/richtext.min.css">
+        
     <link href="assets/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
     <link href="assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="assets/css/helper.css" rel="stylesheet">
@@ -121,7 +122,7 @@
                         </li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-archive"></i><span class="hide-menu">Proyectos / Memorias</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="consejo.php">Ver</a></li>
+                                <li><a href="project.php">Ver</a></li>
                             </ul>
                         </li>
                     </ul>

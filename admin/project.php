@@ -1,26 +1,28 @@
-<?php include "template/header.php"; ?>
- <!-- Page Header -->
-    <header class="masthead" style="background-image: url('assets/img/banner.jpg')">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-<!--             <center><img style="width: 200px;" src="assets/img/min-w.png"></center> -->
-              <h2>Universidad de El Salvador <br> Facultad Multidisciplinaria Oriental</h2>
-              <span class="subheading">Unidad de Proyección Social</span>
+<?php include"template/header.php"; ?>
+        <!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Proyectos</h3> </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Proyectos</a></li>
+                        <li class="breadcrumb-item active">Ver</li>
+                    </ol>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </header>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <form method="POST" action="guadarProject.php" >
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body"> 
+                            <textarea  name="contenido" class="content"  rows="15" placeholder="Enter text ..." style="height:100px"></textarea>
 
- <!-- Page Content -->
-    <div class="container">
-          <center><h3 class="my-4">Estado de Proyectos</h3></center><br><br>
-
-
-        <form method="POST" action="viewproject.php" >
           <center>
           <div class="row">
             <div class="col-md-4">
@@ -29,11 +31,11 @@
                   <select class="form-control" name="dep" required id="exampleSelect1">
                     <option value="" ></option>
                       <?php 
-                      if(!isset($conexion)){ include("config/conexion.php");}
+                      if(!isset($conexion)){ include("../config/conexion.php");}
                       $sql = "SELECT * FROM departamentos";
                       $ejecutar = $conexion->query($sql);
                       while($reg = $ejecutar->fetch_assoc()){
-                        echo "<option value=".$reg["nombre"].">".utf8_encode($reg["nombre"])."</option>";
+                        echo "<option value=".utf8_encode($reg["nombre"]).">".utf8_encode($reg["nombre"])."</option>";
                          }
                         ?>
                   </select>
@@ -78,12 +80,23 @@
             </div>           
           </div>
           <br>
-          <button type="submit" class="btn btn-success">Ver Información</button>
+          <button type="submit" class="btn btn-success">Guardar</button>
           </center>
         </form>
-        <br>
-      <!-- /.row -->
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End PAge Content -->
+<?php include"template/footer.php"; ?>
+    <script src="assets/js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="assets/js/lib/html5-editor/wysihtml5-0.3.0.js"></script>
+    <script src="assets/js/lib/html5-editor/bootstrap-wysihtml5.js"></script>
+    <script src="assets/js/lib/html5-editor/wysihtml5-init.js"></script>
 
-    </div>
-    <!-- /.container -->
-<?php include "template/footer.php"; ?>
+
+        <script>
+        $(document).ready(function() {
+            $('.content').richText();
+        });
+        </script>
