@@ -33,11 +33,15 @@ $sql = "SELECT * FROM `proyectos` WHERE `dep_sec`='$departamento' AND `mes`='$me
 
           <div class="row">
             <div class="col-md-12">
-              <?php 
+              <div id="page" style="" >
+                <?php 
+                echo "<h1>$departamento</h1>";
                  while($reg = $ejecutar_consulta->fetch_assoc()){
                         echo utf8_encode($reg["registro"]);
                          }
-               ?>
+               ?>              
+              </div>
+
             </div>           
           </div>
         <br>

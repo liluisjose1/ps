@@ -1,3 +1,16 @@
+<?php 
+ob_start();
+include("../config/conexion.php");
+
+
+$id= $_GET["id"];
+
+
+$sql = "SELECT p.id,p.registro,p.dep_sec,p.mes,p.anio, d.nombre FROM proyectos AS p INNER JOIN departamentos AS d ON p.dep_sec=d.id WHERE p.id='$id'";
+$ejecutar_consulta = $conexion->query($sql);
+$row = mysqli_fetch_row($ejecutar_consulta);
+?>
+
 <?php include"template/header.php"; ?>
         <!-- Page wrapper  -->
         <div class="page-wrapper">
@@ -8,7 +21,7 @@
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">Proyectos</a></li>
-                        <li class="breadcrumb-item active">Guardar</li>
+                        <li class="breadcrumb-item active">Editar</li>
                     </ol>
                 </div>
             </div>
@@ -16,15 +29,16 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <form method="POST" action="project_save.php" >
+                <form method="POST" action="project_update.php" >
                 <div class="row">
+                              <input type="hidden" name="id" value='<?php echo $id;?>'>
                     <div class="col-12">
                                      <?php
                                     error_reporting(E_ALL ^ E_NOTICE);
                                     if($_GET["error"]=="no"){
                                         echo "<div class='alert alert-primary alert-dismissable'>";
                                         echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
-                                        echo "Registro Exitoso";
+                                        echo "Registro se actualizo con exito";
                                         echo "</div>";
                                     } else if($_GET["error"]=="si"){
                                         echo "<div class='alert alert-danger alert-dismissable'>";
@@ -37,17 +51,18 @@
                                 ?>
                         <div class="card">
                             <div class="card-body"> 
-                                <textarea id="summernote" name="contenido" style="height:100px" ></textarea>
+                                <textarea id="summernote" name="contenido" style="height:100px" ><?php echo utf8_encode($row[1]);  ?></textarea>
 
 
           <center>
           <div class="row">
+
             <div class="col-md-4">
 
                 <div class="form-group">
                   <label for="exampleSelect1">*Seleccione Departamento / Sección</label>
                   <select class="form-control" name="dep" required id="exampleSelect1">
-                    <option value="" ></option>
+                    <option value='<?php echo $row[2];?>' ><?php echo $row[5];?></option>
                       <?php 
                       if(!isset($conexion)){ include("../config/conexion.php");}
                       $sql = "SELECT * FROM departamentos";
@@ -63,7 +78,7 @@
                 <div class="form-group">
                   <label for="exampleSelect1">*Seleccione Mes</label>
                   <select class="form-control" name="mes" required id="exampleSelect1">
-                    <option value="" ></option>
+                    <option value="<?php echo $row[3];?>" ><?php echo $row[3];?></option>
                     <option value="enero">Enero</option>
                     <option value="febrero">Febrero</option>
                     <option value="marzo">Marzo</option>
@@ -83,7 +98,7 @@
                 <div class="form-group">
                   <label for="exampleSelect1">*Seleccione Año</label>
                   <select class="form-control" name="anio" required id="exampleSelect1">
-                    <option value=""></option>
+                    <option value="<?php echo $row[4];?>"><?php echo $row[4];?></option>
                     <?php 
                       $anio = Date("Y")-1;
                       for ($i=-1; $i <=1 ; $i++) { 
@@ -98,7 +113,7 @@
             </div>           
           </div>
           <br>
-          <button type="submit" class="btn btn-success">Guardar</button>
+          <button type="submit" class="btn btn-success">Actualizar</button>
           </center>
         </form>
                              </div>
@@ -121,7 +136,7 @@
       });
 });
 </script>
-
+<?php print($id); ?>
 <!--         <script>
         $(document).ready(function() {
             $('.content').richText();

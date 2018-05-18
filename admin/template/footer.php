@@ -52,7 +52,7 @@
 
     <script src="assets/js/custom.min.js"></script>
 
-        <script src="assets/richtext/src/jquery.richtext.js"></script>
+        <!-- <script src="assets/richtext/src/jquery.richtext.js"></script> -->
 </body>
 
 </html>

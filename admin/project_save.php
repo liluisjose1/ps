@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 include("../config/conexion.php");
 
 $contenido = $_POST["contenido"];
@@ -10,8 +11,10 @@ $sql = "INSERT INTO `proyectos`(`registro`, `dep_sec`, `mes`, `anio`) VALUES ('$
 		$ejecutar_consulta = $conexion->query(utf8_decode($sql));
 		print($sql);
 			if($ejecutar_consulta){
-				$mensaje = "Registro con Exito";
-				header("Location: project.php?error=no&mensaje=$mensaje");
+				header("Location: project.php?error=no");
+			}
+			else{
+				header("Localtion: project.php?error=si");
 			}
 
  ?>

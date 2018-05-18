@@ -33,7 +33,7 @@
                       $sql = "SELECT * FROM departamentos";
                       $ejecutar = $conexion->query($sql);
                       while($reg = $ejecutar->fetch_assoc()){
-                        echo "<option value=".$reg["nombre"].">".utf8_encode($reg["nombre"])."</option>";
+                        echo "<option value=".$reg["id"].">".utf8_encode($reg["nombre"])."</option>";
                          }
                         ?>
                   </select>
