@@ -16,7 +16,7 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <form method="POST" action="project_save.php" >
+                <form method="POST" action="logica/project_save.php" >
                 <div class="row">
                     <div class="col-12">
                                      <?php

@@ -1,3 +1,26 @@
+<?php 
+ob_start();
+include("../config/conexion.php");
+
+//user
+$sqlu = "SELECT COUNT(*) AS Total FROM usuario";
+$ejecutar_consultau = $conexion->query($sqlu);
+$user = mysqli_fetch_row($ejecutar_consultau);
+//consejo
+$sqlc = "SELECT COUNT(*) AS Total FROM consejo";
+$ejecutar_consultac = $conexion->query($sqlc);
+$consejo = mysqli_fetch_row($ejecutar_consultac);
+//proyectos
+$sqlp = "SELECT COUNT(*) AS Total FROM proyectos";
+$ejecutar_consultap = $conexion->query($sqlp);
+$proyectos = mysqli_fetch_row($ejecutar_consultap);
+//Tamaño DB
+$sqldb = "SELECT sum(ROUND(((DATA_LENGTH + INDEX_LENGTH - DATA_FREE) / 1024 / 1024),2)) AS Size FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA like '%ps%'";
+$ejecutar_consultadb = $conexion->query($sqldb);
+$tdb = mysqli_fetch_row($ejecutar_consultadb);
+
+?>
+
 <?php include "template/header.php" ; ?>
         <!-- Page wrapper  -->
         <div class="page-wrapper">
@@ -18,57 +41,67 @@
                 <!-- Start Page Content -->
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2>568120</h2>
-                                    <p class="m-b-0">Total Revenue</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2>1178</h2>
-                                    <p class="m-b-0">Sales</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card p-30">
-                            <div class="media">
-                                <div class="media-left meida media-middle">
-                                    <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
-                                </div>
-                                <div class="media-body media-text-right">
-                                    <h2>25</h2>
-                                    <p class="m-b-0">Stores</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+                        <a href="users.php">
                         <div class="card p-30">
                             <div class="media">
                                 <div class="media-left meida media-middle">
                                     <span><i class="fa fa-user f-s-40 color-danger"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2>847</h2>
-                                    <p class="m-b-0">Customer</p>
+                                    <h2><?php echo $user[0]; ?></h2>
+                                    <p class="m-b-0">Usuarios</p>
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </div>
+                    <div class="col-md-3">
+                        <a href="consejo.php">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-users f-s-40 color-primary"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php echo $consejo[0]; ?></h2>
+                                    <p class="m-b-0">Miembros del Consejo</p>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="project_view.php">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php echo $proyectos[0]; ?></h2>
+                                    <p class="m-b-0">Proyectos / Memorias </p>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="mantenimiento.php">
+                        <div class="card p-30">
+                            <div class="media">
+                                <div class="media-left meida media-middle">
+                                    <span><i class="fa fa-database f-s-40 color-success"></i></span>
+                                </div>
+                                <div class="media-body media-text-right">
+                                    <h2><?php echo $tdb[0]; ?> Mb</h2>
+                                    <p class="m-b-0">Tamaño de DB</p>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+
                 </div>
 
                 <div class="row">

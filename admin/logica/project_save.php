@@ -1,6 +1,6 @@
 <?php 
 ob_start();
-include("../config/conexion.php");
+include("../../config/conexion.php");
 
 $contenido = $_POST["contenido"];
 $departamento= $_POST["dep"];
@@ -11,10 +11,10 @@ $sql = "INSERT INTO `proyectos`(`registro`, `dep_sec`, `mes`, `anio`) VALUES ('$
 		$ejecutar_consulta = $conexion->query(utf8_decode($sql));
 		print($sql);
 			if($ejecutar_consulta){
-				header("Location: project.php?error=no");
+				header("Location: ../project.php?error=no");
 			}
 			else{
-				header("Localtion: project.php?error=si");
+				header("Localtion: ../project.php?error=si");
 			}
 
  ?>

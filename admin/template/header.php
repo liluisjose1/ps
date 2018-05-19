@@ -34,6 +34,8 @@
     <title>UPS | UES FMO</title>
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Alert -->
+    <link href="assets/alert/jquery-confirm.min.css" rel="stylesheet">
     <!-- Custom CSS -->
 
 
@@ -112,6 +114,7 @@
                                 <li><a href="home.php">Home </a></li>
                             </ul>
                         </li>
+                        <br>
                         <li class="nav-label">Apps</li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Usuarios</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -128,6 +131,14 @@
                                 <li><a href="project_view.php">Ver / Modificar </a></li>
                                 <li><a href="project.php">Registrar</a></li>
                             </ul>
+                        </li>
+                        <br>
+                        <li class="nav-label">Configuración</li>
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-wrench"></i><span class="hide-menu">Mantenimiento</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="mantenimiento.php">Realizar</a></li>
+                            </ul>
+                        </li>
                         </li>
                     </ul>
                 </nav>

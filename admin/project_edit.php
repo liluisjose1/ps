@@ -29,7 +29,7 @@ $row = mysqli_fetch_row($ejecutar_consulta);
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <form method="POST" action="project_update.php" >
+                <form method="POST" action="logica/project_update.php" >
                 <div class="row">
                               <input type="hidden" name="id" value='<?php echo $id;?>'>
                     <div class="col-12">
