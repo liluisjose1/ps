@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-05-2018 a las 04:55:18
+-- Tiempo de generación: 19-05-2018 a las 05:26:52
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.4
 
@@ -33,7 +33,7 @@ USE `ps`;
 CREATE TABLE `consejo` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `dep_sec` varchar(50) NOT NULL
+  `dep_sec` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -41,21 +41,21 @@ CREATE TABLE `consejo` (
 --
 
 INSERT INTO `consejo` (`id`, `nombre`, `dep_sec`) VALUES
-(2, 'Ing Marco Vinicio Calderon Castellanos', 'Agronomia'),
-(3, 'Lcda Lisseth Nohemy Saleh Blanco', 'Mercadeo Internacional'),
-(4, 'Lcda Dinora Rosales Hernandez', 'Admon de Empresas'),
-(5, 'Lic. Jose Leonidas Morales', 'Contaduria Publica'),
-(6, 'Lic. Luis Alonso Colato Salamanca', 'Biologia'),
-(7, 'Lcda Karla Maria Mejia', 'Matematica'),
-(8, 'Lic. Oscar Armando Calderon Castellanos', 'Fisica'),
-(9, 'Ing Rigoberto Lopez', 'Ingenieria y Arquitectura'),
-(10, 'Lic. Silverio Enrique Berrios Polio', 'Sociologia'),
-(11, 'Lcda Marleny del Carmen Guevara de Sorto', 'Educacion'),
-(12, 'Lic. Raul Orlando Romero Lopez', 'Ingles'),
-(13, 'Lic. Rafael Sol Samayoa', 'Letras'),
-(14, 'Lic. Jose Milton Dominguez Vargas', 'Psicologia'),
-(15, 'Dr. Ramon Narciso Granados Zelaya', 'Derecho'),
-(16, 'Lcda. Maria del Carmen De Heski', 'Post-Grado');
+(1, 'Ing Marco Vinicio Calderon Castellanos', 1),
+(2, 'Lcda Lisseth Nohemy Saleh Blanco', 2),
+(3, 'Lcda Dinora Rosales Hernandez', 3),
+(4, 'Lic. Jose Leonidas Morales', 4),
+(5, 'Lic. Luis Alonso Colato Salamanca', 5),
+(6, 'Lcda Karla Maria Mejia', 6),
+(7, 'Lic. Oscar Armando Calderon Castellanos', 7),
+(8, 'Ing Rigoberto Lopez', 8),
+(9, 'Lic. Silverio Enrique Berrios Polio', 9),
+(10, 'Lcda Marleny del Carmen Guevara de Sorto', 10),
+(11, 'Lic. Raul Orlando Romero Lopez', 11),
+(12, 'Lic. Rafael Sol Samayoa', 12),
+(13, 'Lic. Jose Milton Dominguez Vargas', 13),
+(14, 'Dr. Ramon Narciso Granados Zelaya', 14),
+(15, 'Lcda. Maria del Carmen De Heski', 15);
 
 -- --------------------------------------------------------
 
@@ -179,7 +179,7 @@ ALTER TABLE `proyectos`
 -- Filtros para la tabla `consejo`
 --
 ALTER TABLE `consejo`
-  ADD CONSTRAINT `consejo_ibfk_1` FOREIGN KEY (`dep_sec`) REFERENCES `departamentos` (`nombre`);
+  ADD CONSTRAINT `consejo_fk` FOREIGN KEY (`dep_sec`) REFERENCES `departamentos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `proyectos`
