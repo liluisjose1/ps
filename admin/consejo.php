@@ -36,7 +36,7 @@
                                         <tbody>
                                         	<?php
                                             if(!isset($conexion)){ include("../config/conexion.php");}
-                                            $sql = "SELECT * FROM consejo";
+                                            $sql = "SELECT c.id,c.nombre, d.nombre AS dep_sec  FROM consejo AS c INNER JOIN departamentos AS d ON c.dep_sec=d.id";
                                             $ejecutar = $conexion->query($sql);
                                             $cont=0;
                                             while($reg = $ejecutar->fetch_assoc()){

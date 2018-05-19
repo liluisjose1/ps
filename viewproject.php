@@ -8,6 +8,11 @@ $anio=$_POST["anio"];
 
 $sql = "SELECT * FROM `proyectos` WHERE `dep_sec`='$departamento' AND `mes`='$mes' AND `anio`='$anio'";
     $ejecutar_consulta = $conexion->query($sql);
+
+//dep
+$sqld = "SELECT c.id,c.nombre, d.nombre FROM consejo AS c INNER JOIN departamentos AS d ON c.dep_sec=d.id";
+$ejecutar_consulta = $conexion->query($sql);
+$row = mysqli_fetch_row($ejecutar_consulta);
 ?>
 
 <?php include "template/header.php"; ?>
