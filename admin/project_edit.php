@@ -62,7 +62,7 @@ $row = mysqli_fetch_row($ejecutar_consulta);
                 <div class="form-group">
                   <label for="exampleSelect1">*Seleccione Departamento / Sección</label>
                   <select class="form-control" name="dep" required id="exampleSelect1">
-                    <option value='<?php echo $row[2];?>' ><?php echo $row[5];?></option>
+                    <option value='<?php echo utf8_encode($row[2]);?>' ><?php echo utf8_encode($row[5]);?></option>
                       <?php 
                       if(!isset($conexion)){ include("../config/conexion.php");}
                       $sql = "SELECT * FROM departamentos";
@@ -103,7 +103,7 @@ $row = mysqli_fetch_row($ejecutar_consulta);
                       $anio = Date("Y")-1;
                       for ($i=-1; $i <=1 ; $i++) { 
                         # code...
-                          echo "<option value=".$anio.">".$anio."</option>";
+                        echo "<option value=".$anio.">".$anio."</option>";
                         $anio+=1;
 
                       }

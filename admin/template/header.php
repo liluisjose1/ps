@@ -36,11 +36,9 @@
     <link href="assets/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Alert -->
     <link href="assets/alert/jquery-confirm.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-
-
-    <link rel="stylesheet" href="assets/richtext/src/richtext.min.css">
+    <!-- summer note -->
     <link rel="stylesheet" href="assets/summer/summernote.css">
+    <link rel="stylesheet" href="assets/summer/summernote-bs4.css">
         
     <link href="assets/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
     <link href="assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">

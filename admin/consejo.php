@@ -16,14 +16,39 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Consejo </h4>
 
-                            </div>
-                                <div class="table-responsive m-t-40">
+                <div class="row">
+                    <div class="col-md-12">
+                         <?php
+                                    error_reporting(E_ALL ^ E_NOTICE);
+                                    if($_GET["error"]=="no"){
+                                        echo "<div class='alert alert-primary alert-dismissable'>";
+                                        echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+                                        echo "Registro Exitoso";
+                                        echo "</div>";
+                                    } else if($_GET["error"]=="si"){
+                                        echo "<div class='alert alert-danger alert-dismissable'>";
+                                        echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+                                        echo "Error al registrar";
+                                        echo "</div>";
+                                    } 
+
+                                    
+                                ?>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Consejo</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Ver</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Crear</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Eliminar</span></a> </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content tabcontent-border">
+                                    <div class="tab-pane active" id="home" role="tabpanel">
+                                        <div class="p-20">
+                                            <div class="table-responsive">
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
@@ -34,7 +59,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        	<?php
+                                            <?php
                                             if(!isset($conexion)){ include("../config/conexion.php");}
                                             $sql = "SELECT c.id,c.nombre, d.nombre AS dep_sec  FROM consejo AS c INNER JOIN departamentos AS d ON c.dep_sec=d.id";
                                             $ejecutar = $conexion->query($sql);
@@ -42,7 +67,7 @@
                                             while($reg = $ejecutar->fetch_assoc()){
                                                 $cont=$cont+1;
                                                 echo "<tr>";
-                                                echo "<th scope='row'>".$cont."</th>";
+                                                echo "<th scope='row'>".utf8_encode($reg["id"])."</th>";
                                                 echo "<td>".utf8_encode($reg["nombre"])."</td>";
                                                 echo "<td>".utf8_encode($reg["dep_sec"])."</td>";
                                                 echo "<td>".utf8_encode($reg["dep_sec"])."</td>";
@@ -52,9 +77,114 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane  p-20" id="profile" role="tabpanel">
+                                        <form action="logica/user_save.php" method="POST">
+                                    <div class="form-body">
+                                        <div class="row p-t-20">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Nombre Completo</label>
+                                                    <input type="text" id="firstName" class="form-control" required="" name="nombre" placeholder="John doe">
+                                                    <small class="form-control-feedback"> Campo Requerido </small> </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Departamento / Sección</label>
+                                                    <select class="form-control custom-select" required="" name="dep_sec">
+                                                        <option value=""></option>
+                                                        <?php 
+                                                          if(!isset($conexion)){ include("../config/conexion.php");}
+                                                          $sql = "SELECT * FROM departamentos";
+                                                          $ejecutar = $conexion->query($sql);
+                                                          while($reg = $ejecutar->fetch_assoc()){
+                                                            echo "<option value=".$reg["id"].">".utf8_encode($reg["nombre"])."</option>";
+                                                             }
+                                                            ?>
+                                                    </select>
+                                                    <small class="form-control-feedback"> Campo Requerido </small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Guardar</button>
+                                        <button type="button" class="btn btn-inverse" onclick="location.reload();" >Cancelar</button>
+                                    </div>
+                                </form>
+                                    </div>
+                                    <div class="tab-pane p-20" id="messages" role="tabpanel">
+                                             <form action="logica/user_delete.php" method="POST">
+                                    <div class="form-body">
+                                        <div class="row p-t-20">                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Nombre</label>
+                                                    <select class="form-control custom-select" required="" name="id_consejo">
+                                                        <option value=""></option>
+                                                        <?php 
+                                                          if(!isset($conexion)){ include("../config/conexion.php");}
+                                                          $sql = "SELECT * FROM consejo";
+                                                          $ejecutar = $conexion->query($sql);
+                                                          while($reg = $ejecutar->fetch_assoc()){
+                                                            echo "<option value=".$reg["id"].">".utf8_encode($reg["nombre"])."</option>";
+                                                             }
+                                                            ?>
+                                                    </select>
+                                                    <small class="form-control-feedback"> Campo Requerido </small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Guardar</button>
+                                        <button type="button" class="btn btn-inverse" onclick="location.reload();" >Cancelar</button>
+                                    </div>
+                                </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-title">
+                                <h4>Departamento / Secciones</h4>
+
+                            </div>
+                                <div class="table-responsive">
+                                    <table id="example24" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Departamento / Sección</th>
+                                                <th>Accion</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        	<?php
+                                            if(!isset($conexion)){ include("../config/conexion.php");}
+                                            $sql = "SELECT * FROM departamentos";
+                                            $ejecutar = $conexion->query($sql);
+                                            $cont=0;
+                                            while($reg = $ejecutar->fetch_assoc()){
+                                                $cont=$cont+1;
+                                                echo "<tr>";
+                                                echo "<th scope='row'>".utf8_encode($reg["id"])."</th>";
+                                                echo "<td>".utf8_encode($reg["nombre"])."</td>";
+                                                echo "<td>".utf8_encode($reg["nombre"])."</td>";
+                                                echo "</tr>";
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
                 </div>
-                <!-- End PAge Content -->
 <?php include"template/footer.php"; ?>

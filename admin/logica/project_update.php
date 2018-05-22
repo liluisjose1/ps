@@ -1,5 +1,5 @@
 <?php 
-//ob_start();
+ob_start();
 
 include("../../config/conexion.php");
 
@@ -9,8 +9,11 @@ $departamento= $_POST["dep"];
 $mes         =$_POST["mes"];
 $anio        =$_POST["anio"];
 
-$sql = "UPDATE `proyectos` SET `id`=$id,`registro`=$contenido, `dep_sec`=$departamento, `mes`=$mes, `anio`=$anio WHERE $id";
+//delete
+//$sql_delete = "DELETE FROM `proyectos` WHERE `id`=$id";
+$sql = "UPDATE `proyectos` SET `id`='$id',`registro`='$contenido', `dep_sec`='$departamento', `mes`='$mes', `anio`='$anio' WHERE `id`='$id'";
 		$ejecutar_consulta = $conexion->query(utf8_decode($sql));
+		
 		print($sql);
 			if($ejecutar_consulta){
 				header("Location: ../project_edit.php?error=no&id=$id");
