@@ -18,6 +18,22 @@
                 <!-- Start Page Content -->
                 <div class="row">
                     <div class="col-lg-12">
+                    <?php
+                                    error_reporting(E_ALL ^ E_NOTICE);
+                                    if($_GET["error"]=="no"){
+                                        echo "<div class='alert alert-primary alert-dismissable'>";
+                                        echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+                                        echo "Eliminado con exito";
+                                        echo "</div>";
+                                    } else if($_GET["error"]=="si"){
+                                        echo "<div class='alert alert-danger alert-dismissable'>";
+                                        echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+                                        echo "Error al eliminar";
+                                        echo "</div>";
+                                    } 
+
+                                    
+                    ?>
                         <div class="card">
                             <div class="card-title">
                                 <h4>Registro</h4>
@@ -48,7 +64,7 @@
                                                 echo "<td>".utf8_encode($reg["nombre"])."</td>";
                                                 echo "<td>".utf8_encode($reg["mes"])."</td>";
                                                 echo "<td>".utf8_encode($reg["anio"])."</td>";
-                                                echo "<td><a href="."project_edit.php?id=".$reg['id']."><i class='fa fa-edit'>Editar</i></a></td>";
+                                                echo "<td><a class='btn btn-success' href="."project_edit.php?id=".$reg['id']."><i class='fa fa-edit'> Editar</i></a>  <a class='btn btn-danger' href="."logica/project_delete.php?id=".$reg['id']."><i class='fa fa-trash'> Eliminar</i></a></td>";
                                                 echo "</tr>";
                                             }
                                             ?>

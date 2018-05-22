@@ -2,16 +2,16 @@
 ob_start();
 include("../../config/conexion.php");
 
-$id = $_POST["id_user"];
+$id = $_POST["id_consejo"];
 
-$sql = "DELETE FROM `usuario` WHERE `usuario`='$id'";
+$sql = "DELETE FROM `consejo` WHERE `id`='$id'";
 		$ejecutar_consulta = $conexion->query(utf8_decode($sql));
 		print($sql);
 			if($ejecutar_consulta){
-				header("Location: ../users.php?error=no");
+				header("Location: ../consejo.php?error=no");
 			}
 			else{
-				header("Localtion: ../users.php?error=si");
+				header("Localtion: ../consejo.php?error=si");
 			}
 
  ?>

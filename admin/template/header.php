@@ -116,18 +116,18 @@
                         <li class="nav-label">Apps</li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Usuarios</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="users.php">Ver</a></li>
+                                <li><a href="users.php">Ver / Crear / Eliminar</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Consejo</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="consejo.php">Ver</a></li>
+                                <li><a href="consejo.php">Ver / Crear / Eliminar</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fa fa-archive"></i><span class="hide-menu">Proyectos / Memorias</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="project_view.php">Ver / Modificar </a></li>
                                 <li><a href="project.php">Registrar</a></li>
+                                <li><a href="project_view.php">Ver / Modificar / Eliminar </a></li>
                             </ul>
                         </li>
                         <br>

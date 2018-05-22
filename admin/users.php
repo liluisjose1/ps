@@ -18,13 +18,35 @@
                 <!-- Start Page Content -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Usuarios </h4>
+                             <?php
+                                    error_reporting(E_ALL ^ E_NOTICE);
+                                    if($_GET["error"]=="no"){
+                                        echo "<div class='alert alert-primary alert-dismissable'>";
+                                        echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+                                        echo "Registro Exitoso";
+                                        echo "</div>";
+                                    } else if($_GET["error"]=="si"){
+                                        echo "<div class='alert alert-danger alert-dismissable'>";
+                                        echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+                                        echo "Error al registrar";
+                                        echo "</div>";
+                                    } 
 
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive m-t-40">
+                                    
+                                ?>
+                        <div class="card">
+                            <h4 class="card-title">Consejo</h4>
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Ver</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Crear</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Eliminar</span></a> </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content tabcontent-border">
+                                    <div class="tab-pane active" id="home" role="tabpanel">
+                                        <div class="p-20">
+                                            <div class="table-responsive">
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
@@ -32,11 +54,10 @@
                                                 <th>Usuario</th>
                                                 <th>Nombre</th>
                                                 <th>Fecha de Creación</th>
-                                                <th>Accion</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        	<?php
+                                            <?php
                                             if(!isset($conexion)){ include("../config/conexion.php");}
                                             $sql = "SELECT * FROM usuario";
                                             $ejecutar = $conexion->query($sql);
@@ -48,12 +69,75 @@
                                                 echo "<td>".utf8_encode($reg["usuario"])."</td>";
                                                 echo "<td>".utf8_encode($reg["nombre"])."</td>";
                                                 echo "<td>".utf8_encode($reg["fecha"])."</td>";
-                                                echo "<td>".utf8_encode($reg["fecha"])."</td>";
                                                 echo "</tr>";
                                             }
                                             ?>
                                         </tbody>
                                     </table>
+                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane  p-20" id="profile" role="tabpanel">
+                                        <form action="logica/user_save.php" method="POST">
+                                    <div class="form-body">
+                                        <div class="row p-t-20">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">Usuario</label>
+                                                    <input type="text" id="firstName" class="form-control" required="" name="user" placeholder="User">
+                                                    <small class="form-control-feedback"> Campo Requerido </small> </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">Nombre</label>
+                                                    <input type="text" id="firstName1" class="form-control" required="" name="nbre" placeholder="Nombre">
+                                                    <small class="form-control-feedback"> Campo Requerido </small> </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label">Contraseña</label>
+                                                    <input type="password" id="firstName2" class="form-control" required="" name="pass" placeholder="Password">
+                                                    <small class="form-control-feedback"> Campo Requerido </small> </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Guardar</button>
+                                        <button type="button" class="btn btn-inverse" onclick="location.reload();" >Cancelar</button>
+                                    </div>
+                                </form>
+                                    </div>
+                                    <div class="tab-pane p-20" id="messages" role="tabpanel">
+                                             <form action="logica/user_delete.php" method="POST">
+                                    <div class="form-body">
+                                        <div class="row p-t-20">                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Nombre</label>
+                                                    <select class="form-control custom-select" required="" name="id_user">
+                                                        <option value=""></option>
+                                                        <?php 
+                                                          if(!isset($conexion)){ include("../config/conexion.php");}
+                                                          $sql = "SELECT * FROM usuario";
+                                                          $ejecutar = $conexion->query($sql);
+                                                          while($reg = $ejecutar->fetch_assoc()){
+                                                            echo "<option value=".$reg["usuario"].">".utf8_encode($reg["nombre"])."</option>";
+                                                             }
+                                                            ?>
+                                                    </select>
+                                                    <small class="form-control-feedback"> Campo Requerido </small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Guardar</button>
+                                        <button type="button" class="btn btn-inverse" onclick="location.reload();" >Cancelar</button>
+                                    </div>
+                                </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

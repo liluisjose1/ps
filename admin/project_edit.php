@@ -51,13 +51,16 @@ $row = mysqli_fetch_row($ejecutar_consulta);
                                 ?>
                         <div class="card">
                             <div class="card-body"> 
+                              <div class="row">
+                                <div class="col-md-8">
+
                                 <textarea id="summernote" name="contenido" style="height:100px" ><?php echo utf8_encode($row[1]);  ?></textarea>
+                              </div>
+                                <div class="col-md-4">
+                                    <br><br>
 
 
           <center>
-          <div class="row">
-
-            <div class="col-md-4">
 
                 <div class="form-group">
                   <label for="exampleSelect1">*Seleccione Departamento / Sección</label>
@@ -73,8 +76,6 @@ $row = mysqli_fetch_row($ejecutar_consulta);
                         ?>
                   </select>
                 </div>
-            </div>  
-            <div class="col-md-4">
                 <div class="form-group">
                   <label for="exampleSelect1">*Seleccione Mes</label>
                   <select class="form-control" name="mes" required id="exampleSelect1">
@@ -93,8 +94,6 @@ $row = mysqli_fetch_row($ejecutar_consulta);
                     <option value="diciembre">Diciembre</option>
                   </select>
                 </div>
-            </div>  
-            <div class="col-md-4">
                 <div class="form-group">
                   <label for="exampleSelect1">*Seleccione Año</label>
                   <select class="form-control" name="anio" required id="exampleSelect1">
@@ -110,15 +109,14 @@ $row = mysqli_fetch_row($ejecutar_consulta);
                     ?>
                   </select>
                 </div>
-            </div>           
-          </div>
-          <br>
-          <button type="submit" class="btn btn-success">Actualizar</button>
-          </center>
-        </form>
-                             </div>
+            <br>
+                              <button type="submit" class="btn btn-success">Guardar</button>
+                              </center>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                  </form>
                 </div>
                 <!-- End PAge Content -->
 <?php include"template/footer.php"; ?>
@@ -132,7 +130,7 @@ $row = mysqli_fetch_row($ejecutar_consulta);
 <script >
   $(document).ready(function() {      
     $('#summernote').summernote({
-        height: 150
+        height: 300
       });
 });
 </script>

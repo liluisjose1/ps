@@ -2,17 +2,32 @@
 ob_start();
 include("../../config/conexion.php");
 
-$nombre = $_POST["nombre"];
-$departamento= $_POST["dep_sec"];
+$usuario = $_POST["user"];
+$nombre = $_POST["nbre"];
+$password= $_POST["pass"];
+//$date = Date("Y-m-d");
 
-$sql = "INSERT INTO `consejo`(`nombre`, `dep_sec`) VALUES  ('$nombre','$departamento')";
-		$ejecutar_consulta = $conexion->query(utf8_decode($sql));
-		print($sql);
+
+	/* Verificamos que el usuario que se quiere crear no exista ya en la base de datos. */
+	$consulta = "SELECT * FROM usuario WHERE usuario='$usuario'";
+	$ejecutar_consulta = $conexion->query($consulta);
+	$num_regs = $ejecutar_consulta->num_rows;
+
+	/*Si no hay registros, el usuario no existe. */
+	if($num_regs==0){
+
+			/* Si coinciden, guardamos la información en nuestra base de datos. */
+			$consulta = "INSERT INTO  `usuario`(`usuario`, `nombre`, `password`, `fecha`) VALUES ('$usuario','$nombre', SHA1('$password'), curdate())";
+			$ejecutar_consulta = $conexion->query(utf8_decode($consulta));
+			
+			/* Si se ejecutó la consulta, redirigimos al archivo del formulario con una clave de que se ejecutó correctamente. */
 			if($ejecutar_consulta){
-				header("Location: ../consejo.php?error=no");
+				header("Location: ../users.php?error=no");
 			}
-			else{
-				header("Localtion: ../consejo.php?error=si");
-			}
-
+		
+	}
+	/* Si existen registros, indicamos que el usuario a crear ya existe. */
+	else{
+			header("Localtion: ../users.php?error=si");
+		}
  ?>

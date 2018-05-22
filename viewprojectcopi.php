@@ -23,6 +23,7 @@ $rowd = mysqli_fetch_row($ejecutar_consultad);
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
+            <center><img style="width: 200px;" src="assets/img/min-w.png"></center>
               <h2>Universidad de El Salvador <br> Facultad Multidisciplinaria Oriental</h2>
               <span class="subheading">Unidad de Proyección Social</span>
             </div>
@@ -33,22 +34,31 @@ $rowd = mysqli_fetch_row($ejecutar_consultad);
 
  <!-- Page Content -->
     <div class="container">
-      <br><br>
-           <?php while($reg = $ejecutar_consulta->fetch_assoc()){
-              if ($reg["id"]!="") {?>
       <div class="pull-right">
         <a href="javascript:imprSelec('page')"><i class="fa fa-print"></i></a>
       </div>
 
+          
           <div class="row">
             <div class="col-md-12">
               <div id="page" style="" >
                 <center><h3 class="my-4">UNIVERSIDAD DE EL SALVADOR <br> FACULTAD MULTIDISCIPLINARIA ORIENTAL <br> UNIDAD DE PROYECCION SOCIAL </h3><p>Ciudad Universitaria de Oriente, <?php echo date("d F") ." de ". date("Y"); ?></p> </center>
-          <p><b><?php echo utf8_encode($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br>  <?php echo utf8_encode($rowd[2]); ?></b></p> 
+          <p><?php echo utf8_encode($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br> <?php echo utf8_encode($rowd[2]); ?></p> 
           <p>Sirva la presente para saludarle y desearle éxitos en sus funciones administrativas y personales.</p>
           <p style="text-align: justify;">Por medio de la presente: remito a Usted el listado de los Proyecto Aprobados, Proyectos con observaciones y Memorias con observaciones y listado de cartas de servicio social de los Estudiantes pertenecientes al <b><?php echo utf8_encode($rowd[2]);?></b> Para que pasen a la Unidad de Proyección Social a retirar sus respectivos Proyectos y Memorias para ser corregidos y continuar el proceso correspondiente; así también los proyectos aprobados y cartas de servicio social pasar a retirarlos.</p>
-               
-                        <?php echo utf8_encode($reg["registro"]); ?>
+                <?php 
+                 while($reg = $ejecutar_consulta->fetch_assoc()){
+                  //print_r($reg);
+                  if (empty($reg["id"])) {
+                    # code...
+                    echo utf8_encode($reg["registro"]);
+                  }
+                  else{
+                    echo "no Existe registro";
+                  }
+                        
+                         }
+               ?> 
                <br>
                <p>Es de aclarar que: </p>
                <p style="text-align: justify; padding-left: 50px;">
@@ -65,11 +75,9 @@ $rowd = mysqli_fetch_row($ejecutar_consultad);
 
             </div>           
           </div>
-      <?php }else {
-        # code..
-        echo '<center><h1>No existe registro</h1></center>';
-      }} ?>
+        <br>
       <!-- /.row -->
+
     </div>
     <!-- /.container -->
 <?php include "template/footer.php"; ?>
@@ -77,4 +85,4 @@ $rowd = mysqli_fetch_row($ejecutar_consultad);
 function imprSelec(page){
   var ficha=document.getElementById(page);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();
 }
-</script> 
+</script>

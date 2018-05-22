@@ -55,7 +55,6 @@
                                                 <th>#</th>
                                                 <th>Nombre</th>
                                                 <th>Departamento / Sección</th>
-                                                <th>Accion</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -70,7 +69,6 @@
                                                 echo "<th scope='row'>".utf8_encode($reg["id"])."</th>";
                                                 echo "<td>".utf8_encode($reg["nombre"])."</td>";
                                                 echo "<td>".utf8_encode($reg["dep_sec"])."</td>";
-                                                echo "<td>".utf8_encode($reg["dep_sec"])."</td>";
                                                 echo "</tr>";
                                             }
                                             ?>
@@ -80,7 +78,7 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane  p-20" id="profile" role="tabpanel">
-                                        <form action="logica/user_save.php" method="POST">
+                                        <form action="logica/consejo_save.php" method="POST">
                                     <div class="form-body">
                                         <div class="row p-t-20">
                                             <div class="col-md-6">
@@ -117,7 +115,7 @@
                                 </form>
                                     </div>
                                     <div class="tab-pane p-20" id="messages" role="tabpanel">
-                                             <form action="logica/user_delete.php" method="POST">
+                                             <form action="logica/consejo_delete.php" method="POST">
                                     <div class="form-body">
                                         <div class="row p-t-20">                                            <!--/span-->
                                             <div class="col-md-6">
@@ -150,41 +148,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Departamento / Secciones</h4>
-
-                            </div>
-                                <div class="table-responsive">
-                                    <table id="example24" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Departamento / Sección</th>
-                                                <th>Accion</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        	<?php
-                                            if(!isset($conexion)){ include("../config/conexion.php");}
-                                            $sql = "SELECT * FROM departamentos";
-                                            $ejecutar = $conexion->query($sql);
-                                            $cont=0;
-                                            while($reg = $ejecutar->fetch_assoc()){
-                                                $cont=$cont+1;
-                                                echo "<tr>";
-                                                echo "<th scope='row'>".utf8_encode($reg["id"])."</th>";
-                                                echo "<td>".utf8_encode($reg["nombre"])."</td>";
-                                                echo "<td>".utf8_encode($reg["nombre"])."</td>";
-                                                echo "</tr>";
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
 <?php include"template/footer.php"; ?>
