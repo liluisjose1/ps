@@ -1,5 +1,7 @@
 <?php 
+header('Content-Type: text/html; charset=utf-8');
 ob_start();
+header('Content-Type: text/html; charset=utf-8');
 include("../../config/conexion.php");
 
 $nombre = $_POST["nombre"];

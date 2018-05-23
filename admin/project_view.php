@@ -48,7 +48,7 @@
                                                 <th>ID Departamento</th>
                                                 <th>Mes</th>
                                                 <th>Año</th>
-                                                <th>Accion</th>
+                                                <th style="width: 200px;">Accion</th>
                                             </tr>
                                         </thead>
                                         <tbody>

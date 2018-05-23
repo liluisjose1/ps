@@ -1,5 +1,5 @@
 <?php
-/*~ Archivo sesion.php
+/*~ Archivo control.php
 .---------------------------------------------------------------------------.
 |    Software: SI -  Sistema de Informacion                                 |
 |     Versión: 1.0                                                          |
@@ -13,12 +13,32 @@
 | de Proyeccion Social.                                                     |
 |                                                                           |
 '---------------------------------------------------------------------------'
-*/ 
+*/
 ?>
 <?php
-session_start();
-//Evaluo que la sesión continue verificando una de las variables creadas en control.php, cuando esta ya no coincida con su valor inicial se redirije al archivo de salir.php
-if(!$_SESSION["autentificado"]){
-    header("Location: salir.php");
-}
+header('Content-Type: text/html; charset=utf-8'); 
+	include("../../config/conexion.php");
+
+	$usuario = $_POST["user_txt"];
+	$password = $_POST["password_txt"];
+	$consulta = "SELECT usuario FROM usuario WHERE usuario='$usuario' AND password=SHA1('$password')";
+	
+	$ejecutar_consulta = $conexion->query($consulta);
+
+	$regs = $ejecutar_consulta->num_rows;
+	
+	if($regs!=0)
+	{
+		session_start();
+
+		$_SESSION["autentificado"]=true;
+		$_SESSION["usuario"]=$_POST["user_txt"];
+		setcookie("sesion",$_SESSION["autentificado"],time()+3600,"/");
+		header("Location: ../home.php");
+	}
+
+	else
+	{
+		header("Location: ../index.php?error=si");
+	}
 ?>

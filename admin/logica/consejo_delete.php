@@ -1,5 +1,7 @@
 <?php 
+header('Content-Type: text/html; charset=utf-8');
 ob_start();
+
 include("../../config/conexion.php");
 
 $id = $_POST["id_consejo"];

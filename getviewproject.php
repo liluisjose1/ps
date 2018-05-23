@@ -2,9 +2,9 @@
 include("config/conexion.php");
 
 
-$departamento= $_POST["dep"];
-$mes=$_POST["mes"];
-$anio=$_POST["anio"];
+$departamento= $_GET["dep"];
+$mes=$_GET["mes"];
+$anio=$_GET["anio"];
 
 $sql = "SELECT * FROM `proyectos` WHERE `dep_sec`='$departamento' AND `mes`='$mes' AND `anio`='$anio'";
     $ejecutar_consulta = $conexion->query($sql);

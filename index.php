@@ -75,6 +75,22 @@
 
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
+        <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Registros recientes</h5>
+            <div class="card-body">
+              <div style="font-size: 15px;">
+              <?php 
+                      if(!isset($conexion)){ include("config/conexion.php");}
+                      $sql = "SELECT p.dep_sec,p.mes,p.anio,d.nombre FROM proyectos AS p INNER JOIN departamentos AS d ON p.dep_sec=d.id ORDER BY p.id DESC LIMIT 15";
+                      $ejecutar = $conexion->query($sql);
+                      while($reg = $ejecutar->fetch_assoc()){
+                        echo "<a href="."getviewproject.php?dep=".utf8_encode($reg["dep_sec"])."&mes=".utf8_encode($reg["mes"])."&anio=".utf8_encode($reg["anio"]).">".utf8_encode($reg["nombre"])." ".utf8_encode($reg["mes"])." ".utf8_encode($reg["anio"])."</a><br>";
+                         }
+                        ?>
+        </div>
+            </div>
+          </div>
          <!-- Side Widget -->
           <div class="card my-4">
             <h5 class="card-header">Facultad</h5>
@@ -88,12 +104,13 @@
           <div class="card my-4">
             <h5 class="card-header">Sección de Deportes</h5>
             <div class="card-body">
-            	<center>
+              <center>
 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSecci%25C3%25B3n-de-Deportes-Facultad-Multidisciplinaria-Oriental-1096150557191677%2F&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1584763541776868" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-				</center>
+        </center>
             </div>
           </div>
 
+          
         </div>
 
       </div>

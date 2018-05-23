@@ -1,9 +1,28 @@
+<?php
+/* 
+.---------------------------------------------------------------------------.
+|    Software: SI -  Sistema de Informacion                                 |
+|     Versión: 1.0                                                          |
+|   Lenguajes: PHP, HTML, CSS3 y Javascript                                 |
+| ------------------------------------------------------------------------- |
+|   Autores: Luis Iraheta                                                   |
+| Copyright (C) 2018, FMO-UES. Todos los derechos reservados.               |
+| ------------------------------------------------------------------------- |
+|                                                                           |
+| Este archivo es parte del sistema de informacion SI para la unidad        |
+| de Proyeccion Social.                                                     |
+|                                                                           |
+'---------------------------------------------------------------------------'
+*/ 
+    header('Content-Type: text/html; charset=utf-8');
+?>
 <!DOCTYPE html>
 <html lang="es">
 
   <head>
 
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="liluisjose1">

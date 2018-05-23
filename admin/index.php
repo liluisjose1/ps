@@ -37,11 +37,23 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-lg-4">
+
                         <div class="login-content card">
                             <div class="login-form">
-                                <center><img style="width: 150px" src="assets/images/min_r.png"></center>
-                                <h4>Login UPS-FMO</h4>
-                                <form action="control.php" method="POST" >
+                                <?php
+                                    error_reporting(E_ALL ^ E_NOTICE);
+                                    if($_GET["error"]=="si"){
+                                        echo "<div class='alert alert-danger alert-dismissable'>";
+                                        echo "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
+                                        echo "Instroduzca credenciales validas";
+                                        echo "</div>";
+                                    } 
+
+                                    
+                                ?>
+                                <!-- <p>Login UPS-FMO</p> -->
+                                <center><img style="width: 100px" src="assets/images/min_r.png"></center>
+                                <form action="logica/control.php" method="POST" >
                                     <div class="form-group">
                                         <label>Usuario</label>
                                         <input name="user_txt" type="text" class="form-control" placeholder="Usuario">
