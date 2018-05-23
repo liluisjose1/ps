@@ -23,53 +23,46 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-          <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
-          </h1>
-
+          <br>
           <!-- Blog Post -->
           <div class="card mb-4">
-            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+<!--             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
             <div class="card-body">
-              <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 1, 2017 by
-              <a href="#">Start Bootstrap</a>
+              <h2 class="card-title">Quienes somos</h2>
+              <p class="card-text">Es el conjunto de actividades planificadas que persiguen objetivos académicos, de investigación y de servicio; con el fin de poner a los miembros de la comunidad universitaria en contacto conla realidad, para obtener una toma de conciencia ante la problemática social salvadoreña e incidir en la transformación y superación de la sociedad.</p>
             </div>
           </div>
-
           <!-- Blog Post -->
-          <div class="card mb-4">
-            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card mb-4" style="text-align: justify;">
+<!--             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
             <div class="card-body">
-              <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 1, 2017 by
-              <a href="#">Start Bootstrap</a>
+              <h2 class="card-title">Objetivos</h2>
+              <p class="card-text">Promover entre la población Salvadoreña, la ciencia, el arte y la cultura, orientadas a la búsqueda de su propia identidad y contribuir en su proceso de desarrollo. <br><br>
+Incidir eficazmente, en forma interdisciplinaria en la transformación del ser humano y de la sociedad contribuyente a su desarrollo económico, social y cultural. <br><br>
+Contribuir a la formación de profesionales que con juicio crítico e iniciativa produzcan ciencias y tecnologías apropiadas a la realidad Salvadoreña. <br><br>
+Promover el debate y aportar en la solución de la problemática nacional.</p>
             </div>
           </div>
-
-          <!-- Blog Post -->
-          <div class="card mb-4">
-            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="row">
+            <div class="col-md-6">
+                        <div class="card mb-4" style="text-align: justify;">
+<!--             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
             <div class="card-body">
-              <h2 class="card-title">Post Title</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-            <div class="card-footer text-muted">
-              Posted on January 1, 2017 by
-              <a href="#">Start Bootstrap</a>
+              <h2 class="card-title">Misión</h2>
+              <p class="card-text">Promover la relación de la FMO con la comunidad y sociedad a través de la organización de actividades culturales, científicas, artísticas, deportivas y de capacitación de carácter profesional, contribuyendo mediante los proyectos que desarrollan los estudiantes y docentes para incidir en la transformación y desarrollo de las comunidades de la Zona Oriental del país mediante el uso de los conocimientos científicos,artísticos,culturales, deportivos, humanísticos, que la Facultad Multidisciplinaria Oriental posee.</p>
             </div>
           </div>
-
-
+            </div>
+            <div class="col-md-6">
+                        <div class="card mb-4" style="text-align: justify;">
+<!--             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
+            <div class="card-body">
+              <h2 class="card-title">Visión</h2>
+              <p class="card-text">La proyección social de la FMO busca incidir en la transformación de la Zona Oriental del país. Además de su integración a las dinámicas estratégicas de la sociedad salvadoreña articulándose con sus actores públicos, sociales y privados, en la construcción de nuevas relaciones sociales que contribuyan al desarrollo humano, justicia, paz y equidad en El Salvador. Consolidando una vinculación fuerte entra la Facultad Multidisciplinaria Oriental y la población del Oriente del País.</p>
+            </div>
+          </div>
+            </div>
+          </div>
 
         </div>
 
@@ -85,7 +78,7 @@
                       $sql = "SELECT p.dep_sec,p.mes,p.anio,d.nombre FROM proyectos AS p INNER JOIN departamentos AS d ON p.dep_sec=d.id ORDER BY p.id DESC LIMIT 15";
                       $ejecutar = $conexion->query($sql);
                       while($reg = $ejecutar->fetch_assoc()){
-                        echo "<a href="."getviewproject.php?dep=".utf8_encode($reg["dep_sec"])."&mes=".utf8_encode($reg["mes"])."&anio=".utf8_encode($reg["anio"]).">".utf8_encode($reg["nombre"])." ".utf8_encode($reg["mes"])." ".utf8_encode($reg["anio"])."</a><br>";
+                        echo "<b><a style='color:#8A0808;' href="."getviewproject.php?dep=".utf8_encode($reg["dep_sec"])."&mes=".utf8_encode($reg["mes"])."&anio=".utf8_encode($reg["anio"]).">".utf8_encode($reg["nombre"])." ".utf8_encode($reg["mes"])." ".utf8_encode($reg["anio"])."</a></b><br>";
                          }
                         ?>
         </div>
