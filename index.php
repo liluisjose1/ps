@@ -37,10 +37,10 @@
 <!--             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
             <div class="card-body">
               <h2 class="card-title">Objetivos</h2>
-              <p class="card-text">Promover entre la población Salvadoreña, la ciencia, el arte y la cultura, orientadas a la búsqueda de su propia identidad y contribuir en su proceso de desarrollo. <br><br>
-Incidir eficazmente, en forma interdisciplinaria en la transformación del ser humano y de la sociedad contribuyente a su desarrollo económico, social y cultural. <br><br>
-Contribuir a la formación de profesionales que con juicio crítico e iniciativa produzcan ciencias y tecnologías apropiadas a la realidad Salvadoreña. <br><br>
-Promover el debate y aportar en la solución de la problemática nacional.</p>
+              <p class="card-text">• Promover entre la población Salvadoreña, la ciencia, el arte y la cultura, orientadas a la búsqueda de su propia identidad y contribuir en su proceso de desarrollo. <br><br>
+• Incidir eficazmente, en forma interdisciplinaria en la transformación del ser humano y de la sociedad contribuyente a su desarrollo económico, social y cultural. <br><br>
+• Contribuir a la formación de profesionales que con juicio crítico e iniciativa produzcan ciencias y tecnologías apropiadas a la realidad Salvadoreña. <br><br>
+• Promover el debate y aportar en la solución de la problemática nacional.</p>
             </div>
           </div>
           <div class="row">
