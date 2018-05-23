@@ -29,7 +29,7 @@
 <!--             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
             <div class="card-body">
               <h2 class="card-title">Quienes somos</h2>
-              <p class="card-text">Es el conjunto de actividades planificadas que persiguen objetivos académicos, de investigación y de servicio; con el fin de poner a los miembros de la comunidad universitaria en contacto conla realidad, para obtener una toma de conciencia ante la problemática social salvadoreña e incidir en la transformación y superación de la sociedad.</p>
+              <p class="card-text">Es el conjunto de actividades planificadas que persiguen objetivos académicos, de investigación y de servicio; con el fin de poner a los miembros de la comunidad universitaria en contacto con la realidad, para obtener una toma de conciencia ante la problemática social salvadoreña e incidir en la transformación y superación de la sociedad.</p>
             </div>
           </div>
           <!-- Blog Post -->
@@ -78,7 +78,7 @@
                       $sql = "SELECT p.dep_sec,p.mes,p.anio,d.nombre FROM proyectos AS p INNER JOIN departamentos AS d ON p.dep_sec=d.id ORDER BY p.id DESC LIMIT 15";
                       $ejecutar = $conexion->query($sql);
                       while($reg = $ejecutar->fetch_assoc()){
-                        echo "<b><a style='color:#8A0808;' href="."getviewproject.php?dep=".utf8_encode($reg["dep_sec"])."&mes=".utf8_encode($reg["mes"])."&anio=".utf8_encode($reg["anio"]).">".utf8_encode($reg["nombre"])." ".utf8_encode($reg["mes"])." ".utf8_encode($reg["anio"])."</a></b><br>";
+                        echo "<b><a style='color:#8A0808;' href="."getviewproject.php?dep=".($reg["dep_sec"])."&mes=".($reg["mes"])."&anio=".($reg["anio"]).">".($reg["nombre"])." ".($reg["mes"])." ".($reg["anio"])."</a></b><br>";
                          }
                         ?>
         </div>

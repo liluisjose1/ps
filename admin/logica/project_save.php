@@ -1,6 +1,5 @@
 <?php 
 ob_start();
-header('Content-Type: text/html; charset=utf-8');
 include("../../config/conexion.php");
 
 $contenido = $_POST["contenido"];
@@ -9,7 +8,7 @@ $mes=$_POST["mes"];
 $anio=$_POST["anio"];
 
 $sql = "INSERT INTO `proyectos`(`registro`, `dep_sec`, `mes`, `anio`) VALUES ('$contenido','$departamento','$mes','$anio')";
-		$ejecutar_consulta = $conexion->query(utf8_decode($sql));
+		$ejecutar_consulta = $conexion->query(($sql));
 		print($sql);
 			if($ejecutar_consulta){
 				header("Location: ../project.php?error=no");

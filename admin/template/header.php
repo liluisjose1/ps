@@ -14,10 +14,9 @@
 |                                                                           |
 '---------------------------------------------------------------------------'
 */ 
-    header('Content-Type: text/html; charset=utf-8');
     include("logica/sesion.php");
     if(!$_COOKIE["sesion"]){
-        header("Location: salir.php");
+        header("Location: logica/salir.php");
     }
 ?>
 <!DOCTYPE html>

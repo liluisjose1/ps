@@ -10,7 +10,7 @@ $sql = "SELECT * FROM `proyectos` WHERE `dep_sec`='$departamento' AND `mes`='$me
     $ejecutar_consulta = $conexion->query($sql);
 
 //dep
-$sqld = "SELECT c.id,c.nombre, d.nombre FROM consejo AS c INNER JOIN departamentos AS d ON c.dep_sec=d.id WHERE C.dep_sec='$departamento'";
+$sqld = "SELECT c.id,c.nombre, d.nombre FROM consejo AS c INNER JOIN departamentos AS d ON c.dep_sec=d.id WHERE c.dep_sec='$departamento'";
 $ejecutar_consultad = $conexion->query($sqld);
 $rowd = mysqli_fetch_row($ejecutar_consultad);
 //existen registros
@@ -53,12 +53,12 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
             <div class="col-md-12">
               <div id="page" style="" >
                 <center><h3 class="my-4">UNIVERSIDAD DE EL SALVADOR <br> FACULTAD MULTIDISCIPLINARIA ORIENTAL <br> UNIDAD DE PROYECCION SOCIAL </h3><p>Ciudad Universitaria de Oriente, <?php echo date("d F") ." de ". date("Y"); ?></p> </center>
-          <p><b><?php echo utf8_encode($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br>  <?php echo utf8_encode($rowd[2]); ?></b></p> 
+          <p><b><?php echo ($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br>  <?php echo ($rowd[2]); ?></b></p> 
           <p>Sirva la presente para saludarle y desearle éxitos en sus funciones administrativas y personales.</p>
-          <p style="text-align: justify;">Por medio de la presente: remito a Usted el listado de los Proyecto Aprobados, Proyectos con observaciones y Memorias con observaciones y listado de cartas de servicio social de los Estudiantes pertenecientes al <b><?php echo utf8_encode($rowd[2]);?></b> Para que pasen a la Unidad de Proyección Social a retirar sus respectivos Proyectos y Memorias para ser corregidos y continuar el proceso correspondiente; así también los proyectos aprobados y cartas de servicio social pasar a retirarlos.</p>
+          <p style="text-align: justify;">Por medio de la presente: remito a Usted el listado de los Proyecto Aprobados, Proyectos con observaciones y Memorias con observaciones y listado de cartas de servicio social de los Estudiantes pertenecientes al <b><?php echo ($rowd[2]);?></b> Para que pasen a la Unidad de Proyección Social a retirar sus respectivos Proyectos y Memorias para ser corregidos y continuar el proceso correspondiente; así también los proyectos aprobados y cartas de servicio social pasar a retirarlos.</p>
                
                 <div class="table-responsive-md">
-                 <?php echo utf8_encode($reg["registro"]); ?>
+                 <?php echo ($reg["registro"]); ?>
                </div>
                         
                <br>

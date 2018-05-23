@@ -60,10 +60,10 @@
                                             while($reg = $ejecutar->fetch_assoc()){
                                                 $cont=$cont+1;
                                                 echo "<tr>";
-                                                echo "<td>".utf8_encode($reg["id"])."</td>";
-                                                echo "<td>".utf8_encode($reg["nombre"])."</td>";
-                                                echo "<td>".utf8_encode($reg["mes"])."</td>";
-                                                echo "<td>".utf8_encode($reg["anio"])."</td>";
+                                                echo "<td>".($reg["id"])."</td>";
+                                                echo "<td>".($reg["nombre"])."</td>";
+                                                echo "<td>".($reg["mes"])."</td>";
+                                                echo "<td>".($reg["anio"])."</td>";
                                                 echo "<td><a class='btn btn-success' href="."project_edit.php?id=".$reg['id']."><i class='fa fa-edit'> Editar</i></a>  <a class='btn btn-danger' href="."logica/project_delete.php?id=".$reg['id']."><i class='fa fa-trash'> Eliminar</i></a></td>";
                                                 echo "</tr>";
                                             }

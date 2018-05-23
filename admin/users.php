@@ -66,9 +66,9 @@
                                                 $cont=$cont+1;
                                                 echo "<tr>";
                                                 echo "<th scope='row'>".$cont."</th>";
-                                                echo "<td>".utf8_encode($reg["usuario"])."</td>";
-                                                echo "<td>".utf8_encode($reg["nombre"])."</td>";
-                                                echo "<td>".utf8_encode($reg["fecha"])."</td>";
+                                                echo "<td>".($reg["usuario"])."</td>";
+                                                echo "<td>".($reg["nombre"])."</td>";
+                                                echo "<td>".($reg["fecha"])."</td>";
                                                 echo "</tr>";
                                             }
                                             ?>
@@ -122,7 +122,7 @@
                                                           $sql = "SELECT * FROM usuario";
                                                           $ejecutar = $conexion->query($sql);
                                                           while($reg = $ejecutar->fetch_assoc()){
-                                                            echo "<option value=".$reg["usuario"].">".utf8_encode($reg["nombre"])."</option>";
+                                                            echo "<option value=".$reg["usuario"].">".($reg["nombre"])."</option>";
                                                              }
                                                             ?>
                                                     </select>

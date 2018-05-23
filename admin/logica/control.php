@@ -16,7 +16,6 @@
 */
 ?>
 <?php
-header('Content-Type: text/html; charset=utf-8'); 
 	include("../../config/conexion.php");
 
 	$usuario = $_POST["user_txt"];

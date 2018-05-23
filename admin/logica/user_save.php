@@ -1,6 +1,5 @@
 <?php 
 ob_start();
-header('Content-Type: text/html; charset=utf-8');
 include("../../config/conexion.php");
 
 $usuario = $_POST["user"];
@@ -19,7 +18,7 @@ $password= $_POST["pass"];
 
 			/* Si coinciden, guardamos la información en nuestra base de datos. */
 			$consulta = "INSERT INTO  `usuario`(`usuario`, `nombre`, `password`, `fecha`) VALUES ('$usuario','$nombre', SHA1('$password'), curdate())";
-			$ejecutar_consulta = $conexion->query(utf8_decode($consulta));
+			$ejecutar_consulta = $conexion->query(($consulta));
 			
 			/* Si se ejecutó la consulta, redirigimos al archivo del formulario con una clave de que se ejecutó correctamente. */
 			if($ejecutar_consulta){

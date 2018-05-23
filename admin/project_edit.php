@@ -54,7 +54,7 @@ $row = mysqli_fetch_row($ejecutar_consulta);
                               <div class="row">
                                 <div class="col-md-8">
 
-                                <textarea id="summernote" name="contenido" style="height:100px" ><?php echo utf8_encode($row[1]);  ?></textarea>
+                                <textarea id="summernote" name="contenido" style="height:100px" ><?php echo ($row[1]);  ?></textarea>
                               </div>
                                 <div class="col-md-4">
                                     <br><br>
@@ -65,13 +65,13 @@ $row = mysqli_fetch_row($ejecutar_consulta);
                 <div class="form-group">
                   <label for="exampleSelect1">*Seleccione Departamento / Sección</label>
                   <select class="form-control" name="dep" required id="exampleSelect1">
-                    <option value='<?php echo utf8_encode($row[2]);?>' ><?php echo utf8_encode($row[5]);?></option>
+                    <option value='<?php echo ($row[2]);?>' ><?php echo ($row[5]);?></option>
                       <?php 
                       if(!isset($conexion)){ include("../config/conexion.php");}
                       $sql = "SELECT * FROM departamentos";
                       $ejecutar = $conexion->query($sql);
                       while($reg = $ejecutar->fetch_assoc()){
-                        echo "<option value=".utf8_encode($reg["id"]).">".utf8_encode($reg["nombre"])."</option>";
+                        echo "<option value=".($reg["id"]).">".($reg["nombre"])."</option>";
                          }
                         ?>
                   </select>

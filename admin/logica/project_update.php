@@ -1,6 +1,5 @@
 <?php 
 ob_start();
-header('Content-Type: text/html; charset=utf-8');
 include("../../config/conexion.php");
 
 $id          = $_POST["id"];
@@ -12,7 +11,7 @@ $anio        =$_POST["anio"];
 //delete
 //$sql_delete = "DELETE FROM `proyectos` WHERE `id`=$id";
 $sql = "UPDATE `proyectos` SET `id`='$id',`registro`='$contenido', `dep_sec`='$departamento', `mes`='$mes', `anio`='$anio' WHERE `id`='$id'";
-		$ejecutar_consulta = $conexion->query(utf8_decode($sql));
+		$ejecutar_consulta = $conexion->query(($sql));
 		
 		print($sql);
 			if($ejecutar_consulta){

@@ -66,9 +66,9 @@
                                             while($reg = $ejecutar->fetch_assoc()){
                                                 $cont=$cont+1;
                                                 echo "<tr>";
-                                                echo "<th scope='row'>".utf8_encode($reg["id"])."</th>";
-                                                echo "<td>".utf8_encode($reg["nombre"])."</td>";
-                                                echo "<td>".utf8_encode($reg["dep_sec"])."</td>";
+                                                echo "<th scope='row'>".($reg["id"])."</th>";
+                                                echo "<td>".($reg["nombre"])."</td>";
+                                                echo "<td>".($reg["dep_sec"])."</td>";
                                                 echo "</tr>";
                                             }
                                             ?>
@@ -98,7 +98,7 @@
                                                           $sql = "SELECT * FROM departamentos";
                                                           $ejecutar = $conexion->query($sql);
                                                           while($reg = $ejecutar->fetch_assoc()){
-                                                            echo "<option value=".$reg["id"].">".utf8_encode($reg["nombre"])."</option>";
+                                                            echo "<option value=".$reg["id"].">".($reg["nombre"])."</option>";
                                                              }
                                                             ?>
                                                     </select>
@@ -128,7 +128,7 @@
                                                           $sql = "SELECT * FROM consejo";
                                                           $ejecutar = $conexion->query($sql);
                                                           while($reg = $ejecutar->fetch_assoc()){
-                                                            echo "<option value=".$reg["id"].">".utf8_encode($reg["nombre"])."</option>";
+                                                            echo "<option value=".$reg["id"].">".($reg["nombre"])."</option>";
                                                              }
                                                             ?>
                                                     </select>

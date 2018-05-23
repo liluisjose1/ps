@@ -70,8 +70,8 @@
                 $ejecutar = $conexion->query($sql);
                 while($reg = $ejecutar->fetch_assoc()){
                   echo "<tr>";
-                   echo "<td>".utf8_encode($reg["nombre"])."</td>";
-                   echo "<td>".utf8_encode($reg["dep_sec"])."</td>";
+                   echo "<td>".($reg["nombre"])."</td>";
+                   echo "<td>".($reg["dep_sec"])."</td>";
                   echo "</tr>";
                    }
                   ?>

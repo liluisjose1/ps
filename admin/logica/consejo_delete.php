@@ -1,5 +1,4 @@
 <?php 
-header('Content-Type: text/html; charset=utf-8');
 ob_start();
 
 include("../../config/conexion.php");
@@ -7,7 +6,7 @@ include("../../config/conexion.php");
 $id = $_POST["id_consejo"];
 
 $sql = "DELETE FROM `consejo` WHERE `id`='$id'";
-		$ejecutar_consulta = $conexion->query(utf8_decode($sql));
+		$ejecutar_consulta = $conexion->query(($sql));
 		print($sql);
 			if($ejecutar_consulta){
 				header("Location: ../consejo.php?error=no");
