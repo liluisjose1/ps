@@ -20,7 +20,7 @@
 	{
 		$servidor 	=	 "localhost";
 		$usuario 	=	 "root";
-		$password 	=	 "";
+		$password 	=	 "123456";
 		$bd 		=	 "ps";
 
 		$conectar = new mysqli($servidor, $usuario, $password, $bd);

@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("config/conexion.php");
 
 
@@ -52,15 +52,16 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
           <div class="row">
             <div class="col-md-12">
               <div id="page" style="" >
-                <center><h3 class="my-4">UNIVERSIDAD DE EL SALVADOR <br> FACULTAD MULTIDISCIPLINARIA ORIENTAL <br> UNIDAD DE PROYECCION SOCIAL </h3><p>Ciudad Universitaria de Oriente, <?php echo date("d F") ." de ". date("Y"); ?></p> </center>
-          <p><b><?php echo ($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br>  <?php echo ($rowd[2]); ?></b></p> 
+                <center><h3 class="my-4">UNIVERSIDAD DE EL SALVADOR <br> FACULTAD MULTIDISCIPLINARIA ORIENTAL <br> UNIDAD DE PROYECCION SOCIAL </h3><p>Ciudad Universitaria de Oriente, <?php setlocale(LC_ALL,"es_ES");
+echo strftime("%A %d de %B del %Y"); ?></p> </center>
+          <p><b><?php echo ($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br>  <?php echo ($rowd[2]); ?></b></p>
           <p>Sirva la presente para saludarle y desearle éxitos en sus funciones administrativas y personales.</p>
           <p style="text-align: justify;">Por medio de la presente: remito a Usted el listado de los Proyecto Aprobados, Proyectos con observaciones y Memorias con observaciones y listado de cartas de servicio social de los Estudiantes pertenecientes al <b><?php echo ($rowd[2]);?></b> Para que pasen a la Unidad de Proyección Social a retirar sus respectivos Proyectos y Memorias para ser corregidos y continuar el proceso correspondiente; así también los proyectos aprobados y cartas de servicio social pasar a retirarlos.</p>
-               
+
                 <div class="table-responsive-md">
                  <?php echo ($reg["registro"]); ?>
                </div>
-                        
+
                <br>
                <p>Es de aclarar que: </p>
                <p style="text-align: justify; padding-left: 50px;">
@@ -71,11 +72,11 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
 
 • Los proyectos y memorias que se presenten tienen un máximo de 8 días para pasar a retirarlos, por lo cual no debe dejarlos abandonados por más tiempo. <br><br>
 
-• No se recibirán proyectos que estén pendientes de año pasado, se les notifico en 27 de noviembre del 2017 que todo servicio social que estuviera inscrito en el año 2017 se daba como fecha limite la entrega del proyecto hasta el 8 de diciembre del 2017, por lo tanto, se procede a su correspondiente anulación. 
-</p>             
+• No se recibirán proyectos que estén pendientes de año pasado, se les notifico en 27 de noviembre del 2017 que todo servicio social que estuviera inscrito en el año 2017 se daba como fecha limite la entrega del proyecto hasta el 8 de diciembre del 2017, por lo tanto, se procede a su correspondiente anulación.
+</p>
               </div>
 
-            </div>           
+            </div>
           </div>
       <?php }else {
         # code..
@@ -90,5 +91,5 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
 function imprSelec(page){
   var ficha=document.getElementById(page);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();
 }
-</script> 
+</script>
 <h1 ></h1>
