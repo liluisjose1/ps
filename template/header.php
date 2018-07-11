@@ -1,5 +1,5 @@
 <?php
-/* 
+/*
 .---------------------------------------------------------------------------.
 |    Software: SI -  Sistema de Informacion                                 |
 |     Versión: 1.0                                                          |
@@ -13,7 +13,7 @@
 | de Proyeccion Social.                                                     |
 |                                                                           |
 '---------------------------------------------------------------------------'
-*/ 
+*/
     //header('Content-Type: text/html; charset=utf-8');
 ?>
 <!DOCTYPE html>
@@ -29,14 +29,14 @@
     <!-- icon -->
     <link rel="shortcut icon"  href="assets/img/min-r.png">
     <!-- title -->
-    <title>UPS | UES FMO</title>
+    <title>Unidad de Proyección Social UES FMO</title>
 
 
     <!-- Bootstrap core CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <!-- Custom fonts for this template -->
     <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

@@ -53,7 +53,7 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
             <div class="col-md-12">
               <div id="page" style="" >
                 <center><h3 class="my-4">UNIVERSIDAD DE EL SALVADOR <br> FACULTAD MULTIDISCIPLINARIA ORIENTAL <br> UNIDAD DE PROYECCION SOCIAL </h3><p>Ciudad Universitaria de Oriente, <?php setlocale(LC_ALL,"es_ES");
-echo strftime("%A %d de %B del %Y"); ?></p> </center>
+echo $reg['mes']." ".strftime("%Y"); ?></p> </center>
           <p><b><?php echo ($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br>  <?php echo ($rowd[2]); ?></b></p>
           <p>Sirva la presente para saludarle y desearle éxitos en sus funciones administrativas y personales.</p>
           <p style="text-align: justify;">Por medio de la presente: remito a Usted el listado de los Proyecto Aprobados, Proyectos con observaciones y Memorias con observaciones y listado de cartas de servicio social de los Estudiantes pertenecientes al <b><?php echo ($rowd[2]);?></b> Para que pasen a la Unidad de Proyección Social a retirar sus respectivos Proyectos y Memorias para ser corregidos y continuar el proceso correspondiente; así también los proyectos aprobados y cartas de servicio social pasar a retirarlos.</p>
