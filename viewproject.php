@@ -23,25 +23,48 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
  }
 ?>
 
-<?php include "template/header.php"; ?>
- <!-- Page Header -->
-    <header class="masthead" style="background-image: url('assets/img/banner.jpg')">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <h2>Universidad de El Salvador <br> Facultad Multidisciplinaria Oriental</h2>
-              <span class="subheading">Unidad de Proyección Social</span>
+
+<?php include "template/header1.php"; ?>
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="assets/img/banner.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Universidad de El Salvador <br>
+                  Facultad Multidisciplinaria Oriental <br>
+                  Unidad de Proyección Social <br>
+                </h2>
+              </div>
             </div>
           </div>
-        </div>
       </div>
-    </header>
+    </div>
+  </section><!-- #intro -->
 
- <!-- Page Content -->
-    <div class="container">
-      <br><br>
+  <main id="main">
+
+    <!--==========================
+      Team Section
+    ============================-->
+    <section id="team">
+      <div class="container">
+        <div class="section-header wow fadeInUp">
+          <h3>Formularios y Guías</h3>
+          <!-- <p></p> -->
+        </div>
+
+ <br><br>
            <?php while($reg = $ejecutar_consulta->fetch_assoc()){
              if (isset($rowe)) {?>
                 <br><br>
@@ -52,15 +75,16 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
           <div class="row">
             <div class="col-md-12">
               <div id="page" style="" >
-                <center><h3 class="my-4">UNIVERSIDAD DE EL SALVADOR <br> FACULTAD MULTIDISCIPLINARIA ORIENTAL <br> UNIDAD DE PROYECCION SOCIAL </h3><p>Ciudad Universitaria de Oriente, <?php echo date("d F") ." de ". date("Y"); ?></p> </center>
-          <p><b><?php echo ($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br>  <?php echo ($rowd[2]); ?></b></p> 
+                <center><h3 class="my-4">UNIVERSIDAD DE EL SALVADOR <br> FACULTAD MULTIDISCIPLINARIA ORIENTAL <br> UNIDAD DE PROYECCION SOCIAL </h3><p>Ciudad Universitaria de Oriente, <?php setlocale(LC_ALL,"es_ES");
+echo $reg['mes']." ".strftime("%Y"); ?></p> </center>
+          <p><b><?php echo ($rowd[1]); ?> <br>Coordinador Sub-Unidad de Proyección Social <br>  <?php echo ($rowd[2]); ?></b></p>
           <p>Sirva la presente para saludarle y desearle éxitos en sus funciones administrativas y personales.</p>
           <p style="text-align: justify;">Por medio de la presente: remito a Usted el listado de los Proyecto Aprobados, Proyectos con observaciones y Memorias con observaciones y listado de cartas de servicio social de los Estudiantes pertenecientes al <b><?php echo ($rowd[2]);?></b> Para que pasen a la Unidad de Proyección Social a retirar sus respectivos Proyectos y Memorias para ser corregidos y continuar el proceso correspondiente; así también los proyectos aprobados y cartas de servicio social pasar a retirarlos.</p>
-               
+
                 <div class="table-responsive-md">
                  <?php echo ($reg["registro"]); ?>
                </div>
-                        
+
                <br>
                <p>Es de aclarar que: </p>
                <p style="text-align: justify; padding-left: 50px;">
@@ -71,11 +95,11 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
 
 • Los proyectos y memorias que se presenten tienen un máximo de 8 días para pasar a retirarlos, por lo cual no debe dejarlos abandonados por más tiempo. <br><br>
 
-• No se recibirán proyectos que estén pendientes de año pasado, se les notifico en 27 de noviembre del 2017 que todo servicio social que estuviera inscrito en el año 2017 se daba como fecha limite la entrega del proyecto hasta el 8 de diciembre del 2017, por lo tanto, se procede a su correspondiente anulación. 
-</p>             
+• No se recibirán proyectos que estén pendientes de año pasado, se les notifico en 27 de noviembre del 2017 que todo servicio social que estuviera inscrito en el año 2017 se daba como fecha limite la entrega del proyecto hasta el 8 de diciembre del 2017, por lo tanto, se procede a su correspondiente anulación.
+</p>
               </div>
 
-            </div>           
+            </div>
           </div>
       <?php }else {
         # code..
@@ -84,11 +108,12 @@ $rowe = mysqli_fetch_row($ejecutar_consultae);
       }} ?>
       <!-- /.row -->
     </div>
+</section><!-- #team -->
+</main>
     <!-- /.container -->
 <?php include "template/footer.php"; ?>
 <script type="text/javascript">
 function imprSelec(page){
   var ficha=document.getElementById(page);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();
 }
-</script> 
-<h1 ></h1>
+</script>

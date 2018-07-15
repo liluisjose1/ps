@@ -6,7 +6,7 @@
 |   Lenguajes: PHP, HTML, CSS3 y Javascript                                 |
 | ------------------------------------------------------------------------- |
 |   Autores: Luis Iraheta                                                   |
-| Copyright (C) 2017, FMO-UES. Todos los derechos reservados.               |
+| Copyright (C) 2018, FMO-UES. Todos los derechos reservados.               |
 | ------------------------------------------------------------------------- |
 |                                                                           |
 | Este archivo es parte del sistema de informacion SI  para la Unidad       |
@@ -14,13 +14,12 @@
 |                                                                           |
 '---------------------------------------------------------------------------'
 */
-?>
-<?php
+
 	function conectarse()
 	{
 		$servidor 	=	 "localhost";
 		$usuario 	=	 "root";
-		$password 	=	 "123456";
+		$password 	=	 "";
 		$bd 		=	 "ps";
 
 		$conectar = new mysqli($servidor, $usuario, $password, $bd);
