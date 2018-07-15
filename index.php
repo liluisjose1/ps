@@ -26,9 +26,15 @@
     </div>
   </section><!-- #intro -->
 
+<<<<<<< HEAD
   <main id="main">
+=======
+ <!-- Page Content -->
+    <div class="container-fluid ">
+>>>>>>> 20730d2a03547addff872cd3d768334ae40b36bc
 
 
+<<<<<<< HEAD
 
     <!--==========================
       About Us Section
@@ -105,6 +111,125 @@
             </tbody>
           </table>
 
+=======
+                <!-- Sidebar Widgets Column -->
+                <div class="col-md-3">
+                <!-- Side Widget -->
+                  <div class="card my-4">
+                    <h5 class="card-header">Registros recientes</h5>
+                    <div class="card-body">
+                      <div style="font-size: 15px;">
+                      <?php
+                              if(!isset($conexion)){ include("config/conexion.php");}
+                              $sql = "SELECT p.dep_sec,p.mes,p.anio,d.nombre FROM proyectos AS p INNER JOIN departamentos AS d ON p.dep_sec=d.id ORDER BY p.id DESC LIMIT 15";
+                              $ejecutar = $conexion->query($sql);
+                              while($reg = $ejecutar->fetch_assoc()){
+                                echo "<b><a style='color:#8A0808;' href="."getviewproject.php?dep=".($reg["dep_sec"])."&mes=".($reg["mes"])."&anio=".($reg["anio"]).">".($reg["nombre"])." ".($reg["mes"])." ".($reg["anio"])."</a></b><br>";
+                                 }
+                                ?>
+                </div>
+                    </div>
+                  </div>
+                 <!-- Side Widget -->
+                  <div class="card my-4">
+                    <h5 class="card-header">Facultad</h5>
+                    <div class="card-body">
+                    	<center>
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffmoues%2F&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1584763541776868" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    	</center>
+                    </div>
+                  </div>
+                  <!-- Side Widget -->
+                  <div class="card my-4">
+                    <h5 class="card-header">Sección de Deportes</h5>
+                    <div class="card-body">
+                      <center>
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSecci%25C3%25B3n-de-Deportes-Facultad-Multidisciplinaria-Oriental-1096150557191677%2F&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1584763541776868" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                </center>
+                    </div>
+                  </div>
+
+
+                </div>
+        <!-- Blog Entries Column -->
+        <div class="col-md-9">
+          <!-- Call to Action Well -->
+          <div class="row">
+
+        <div class="col-sm-12">
+          <hr>
+          <h2 class="mt-4" align=center >Proyección Social </h2>
+          <hr>
+          <p style="text-align:center; font-size: 23px;">Es el conjunto de actividades planificadas que persiguen objetivos académicos, de investigación y de servicio; con el fin de poner a los miembros de la comunidad universitaria en contacto con la realidad, para obtener una toma de conciencia ante la problemática social salvadoreña e incidir en la transformación y superación de la sociedad.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <hr>
+          <h2 class="mt-4" align=center >Actividades</h2>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+
+        </div>
+
+      </div>
+      <div class="row">
+
+       <div class="col-sm-6 my-4">
+         <div class="card">
+           <img class="card-img-top" src="assets/img/fut.png" alt="">
+           <div class="card-body">
+             <h4 class="card-title">Deportes</h4>
+             <p class="card-text">
+               &bull; Torneos de Futbol Masculino. <br>
+               &bull; Torneos de Futbol Femenino. <br>
+               &bull; Torneos de Tenis de Mesa. <br>
+             </p>
+           </div>
+         </div>
+       </div>
+       <div class="col-sm-6 my-4">
+         <div class="card">
+           <img class="card-img-top" src="assets/img/arte.png" alt="">
+           <div class="card-body">
+             <h4 class="card-title">Arte y Cultura</h4>
+             <p class="card-text">
+               &bull; Musicales. <br>
+               &bull; Teatro. <br>
+                <br>
+             </p>
+           </div>
+         </div>
+       </div>
+
+     </div>
+     <!-- /.row -->
+          <!-- Blog Post -->
+          <div class="card mb-4" style="text-align: justify;">
+<!--             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
+            <div class="card-body">
+              <h2 class="card-title">Objetivos</h2>
+              <p class="card-text" style="margin-left:50px;" >• Promover entre la población Salvadoreña, la ciencia, el arte y la cultura, orientadas a la búsqueda de su propia identidad y contribuir en su proceso de desarrollo. <br><br>
+• Incidir eficazmente, en forma interdisciplinaria en la transformación del ser humano y de la sociedad contribuyente a su desarrollo económico, social y cultural. <br><br>
+• Contribuir a la formación de profesionales que con juicio crítico e iniciativa produzcan ciencias y tecnologías apropiadas a la realidad Salvadoreña. <br><br>
+• Promover el debate y aportar en la solución de la problemática nacional.</p>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-6">
+                        <div class="card mb-4" style="text-align: justify;">
+<!--             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
+            <div class="card-body">
+              <h2 class="card-title">Misión</h2>
+              <p class="card-text">Promover la relación de la FMO con la comunidad y sociedad a través de la organización de actividades culturales, científicas, artísticas, deportivas y de capacitación de carácter profesional, contribuyendo mediante los proyectos que desarrollan los estudiantes y docentes para incidir en la transformación y desarrollo de las comunidades de la Zona Oriental del país mediante el uso de los conocimientos científicos,artísticos,culturales, deportivos, humanísticos, que la Facultad Multidisciplinaria Oriental posee.</p>
+            </div>
+>>>>>>> 20730d2a03547addff872cd3d768334ae40b36bc
           </div>
           <br>
           <div class="col-md-12" >
@@ -168,6 +293,7 @@
 
         </div>
 
+<<<<<<< HEAD
       </div>
     </section><!-- #services -->
 
@@ -425,6 +551,8 @@
           </div>
 
         </div>
+=======
+>>>>>>> 20730d2a03547addff872cd3d768334ae40b36bc
 
       </div>
     </section><!-- #portfolio -->
@@ -565,5 +693,9 @@
 
       </div>
     </div>
+<<<<<<< HEAD
   </div>
+=======
+    <!-- /.container -->
+>>>>>>> 20730d2a03547addff872cd3d768334ae40b36bc
 <?php include "template/footer.php"; ?>
